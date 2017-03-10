@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage.manager.addClass.AddClassController">
+   <children>
+      <GridPane prefHeight="443.0" prefWidth="340.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="수업 번호" />
+            <Label text="과목 이름" GridPane.rowIndex="1" />
+            <Label text="대상 학년" GridPane.rowIndex="2" />
+            <Label text="학점" GridPane.rowIndex="3" />
+            <Label text="수용 인원" GridPane.rowIndex="4" />
+            <Label text="설강 년도" GridPane.rowIndex="5" />
+            <Label text="학수 번호" GridPane.rowIndex="6" />
+            <Label text="학부" GridPane.rowIndex="7" />
+            <Label text="교강사" GridPane.rowIndex="8" />
+            <Label text="강의실" GridPane.rowIndex="9" />
+            <TextField fx:id="txtClass_no" prefHeight="23.0" prefWidth="107.0" GridPane.columnIndex="1" />
+            <TextField fx:id="txtClass_name" prefHeight="23.0" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ChoiceBox fx:id="cbStuYear" prefHeight="23.0" prefWidth="60.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCredit" prefHeight="23.0" prefWidth="59.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtPersonMax" prefHeight="23.0" prefWidth="61.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ChoiceBox fx:id="cbYear" prefHeight="23.0" prefWidth="74.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtCourse_id" prefHeight="23.0" prefWidth="121.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ChoiceBox fx:id="cbDept" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <ChoiceBox fx:id="cbLecturer" prefHeight="23.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <TextField fx:id="txtRoom" prefHeight="23.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label text="학기" GridPane.rowIndex="10" />
+            <ChoiceBox fx:id="cbPeriod" disable="true" prefHeight="23.0" prefWidth="88.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label text="수업 시간(시작)" GridPane.rowIndex="11" />
+            <Label text="수업 시간(종료)" GridPane.rowIndex="12" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+               <children>
+                  <ChoiceBox fx:id="cb1_day" prefHeight="23.0" prefWidth="40.0" />
+                  <ChoiceBox fx:id="cb1_time" prefHeight="23.0" prefWidth="102.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
+               <children>
+                  <ChoiceBox fx:id="cb2_day" prefHeight="23.0" prefWidth="40.0" />
+                  <ChoiceBox fx:id="cb2_time" prefHeight="23.0" prefWidth="102.0" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" prefHeight="41.0" prefWidth="340.0" spacing="50.0">
+         <children>
+            <Button fx:id="btnMake" mnemonicParsing="false" text="설강" />
+            <Button fx:id="btnCancel" mnemonicParsing="false" text="취소" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

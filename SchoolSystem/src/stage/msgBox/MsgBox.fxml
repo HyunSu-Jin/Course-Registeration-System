@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="96.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage.msgBox.MsgBoxController">
+   <children>
+      <Label fx:id="lblErrMsg" alignment="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="38.0" prefWidth="224.0" text="에러메세지 출력" wrapText="true" />
+      <Button fx:id="btnOk" layoutX="105.0" layoutY="59.0" mnemonicParsing="false" text="확인" />
+   </children>
+</AnchorPane>

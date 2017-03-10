@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox prefHeight="581.0" prefWidth="935.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stage.manager.ManagerController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="570.0" prefWidth="154.0">
+         <children>
+            <ImageView fitHeight="53.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../bin/images/한양대학교.png" />
+               </image>
+            </ImageView>
+            <Label text="관리 메뉴">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnLogout" mnemonicParsing="false" text="logout">
+               <VBox.margin>
+                  <Insets top="80.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <Separator orientation="VERTICAL" prefHeight="200.0" />
+      <TabPane prefHeight="581.0" prefWidth="773.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="수강편람">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableView" layoutX="7.0" layoutY="96.0" prefHeight="455.0" prefWidth="766.0">
+                           <columns>
+                              <TableColumn prefWidth="40.0" text="학년" />
+                              <TableColumn prefWidth="71.0" text="수업번호" />
+                              <TableColumn prefWidth="93.0" text="학수번호" />
+                              <TableColumn prefWidth="136.0" text="교과목명" />
+                              <TableColumn prefWidth="56.0" text="교강사" />
+                              <TableColumn minWidth="7.0" prefWidth="48.0" text="학점" />
+                              <TableColumn prefWidth="57.0" text="수강정원" />
+                              <TableColumn prefWidth="115.0" text="수업시간" />
+                              <TableColumn prefWidth="74.0" text="강의실" />
+                              <TableColumn prefWidth="74.0" text="폐강" />
+                           </columns>
+                        </TableView>
+                        <HBox layoutX="7.0" prefHeight="100.0" prefWidth="766.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="571.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="44.0" prefWidth="506.0" spacing="5.0">
+                                       <children>
+                                          <Label text="년도" />
+                                          <ChoiceBox fx:id="cbYear" prefHeight="23.0" prefWidth="55.0" />
+                                          <Label text="학년">
+                                             <HBox.margin>
+                                                <Insets left="8.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="cbStuYear" prefHeight="23.0" prefWidth="46.0" />
+                                          <Label text="학과">
+                                             <HBox.margin>
+                                                <Insets left="8.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="cbDept" prefHeight="23.0" prefWidth="109.0" />
+                                          <Label text="교강사">
+                                             <HBox.margin>
+                                                <Insets left="8.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtLecturer" prefHeight="23.0" prefWidth="77.0" />
+                                          <Label text="학기">
+                                             <HBox.margin>
+                                                <Insets left="8.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="cbPeriod" disable="true" prefHeight="23.0" prefWidth="69.0" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="506.0" spacing="5.0">
+                                       <children>
+                                          <Label alignment="CENTER" text="학수번호" />
+                                          <TextField fx:id="txtCurseID" prefHeight="23.0" prefWidth="123.0" />
+                                          <Label text="교과목 명">
+                                             <HBox.margin>
+                                                <Insets left="8.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtClassName" prefHeight="23.0" prefWidth="132.0" />
+                                          <Button fx:id="btnInit" mnemonicParsing="false" text="초기화">
+                                             <HBox.margin>
+                                                <Insets left="40.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <Button fx:id="btnSearch" mnemonicParsing="false" text="검색">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets left="5.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="btnMakeClass" mnemonicParsing="false" prefHeight="35.0" prefWidth="54.0" text="설강">
+                                 <HBox.margin>
+                                    <Insets left="40.0" top="30.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <ImageView fitHeight="95.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../bin/images/한양사자.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="25.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="통계">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="22.0" layoutY="23.0" prefHeight="41.0" prefWidth="60.0" text="학부" textAlignment="CENTER">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="sta_cbDept" layoutX="108.0" layoutY="32.0" prefHeight="23.0" prefWidth="136.0" />
+                        <TableView fx:id="sta_tableView" layoutX="33.0" layoutY="76.0" prefHeight="449.0" prefWidth="716.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="교과목" />
+                            <TableColumn prefWidth="75.0" text="2014년" />
+                              <TableColumn prefWidth="75.0" text="2013년" />
+                              <TableColumn prefWidth="75.0" text="2012년" />
+                              <TableColumn prefWidth="75.0" text="2011년" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="sta_btnSearch" layoutX="260.0" layoutY="32.0" mnemonicParsing="false" text="검색" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</HBox>
