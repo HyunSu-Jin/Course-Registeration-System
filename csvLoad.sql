@@ -1,0 +1,63 @@
+LOAD DATA LOCAL INFILE 'c:/csv/major.csv' 
+INTO TABLE major
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'c:/csv/building.csv' 
+INTO TABLE building
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'c:/csv/course.csv' 
+INTO TABLE course
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'c:/csv/room.csv' 
+INTO TABLE room
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'c:/csv/lecturer.csv' 
+INTO TABLE lecturer
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'c:/csv/student.csv' 
+INTO TABLE student
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'c:/csv/class.csv' 
+INTO TABLE class
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS
+(class_id,class_no,course_id,name,major_id,year,credit,lecturer_id,person_max,opened,@room_id)
+SET room_id = nullif(@room_id,'');
+
+LOAD DATA LOCAL INFILE 'c:/csv/time.csv' 
+INTO TABLE time
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+LOAD DATA LOCAL INFILE 'c:/csv/credits.csv' 
+INTO TABLE credits
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
