@@ -1,6 +1,6 @@
 # Course Registeration System
 ###used technique
-*java
-*MySQL
-*.csv load
-*javaFX(GUI)
+*java<br/>
+*MySQL<br/>
+*.csv load<br/>
+*javaFX(GUI)<br/>
