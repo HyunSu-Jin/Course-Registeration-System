@@ -25,7 +25,6 @@ GUI Interface의 검색조건이 사용자입력에 따라 결정되어지므로
 <pre><code>
 private void setMyJoinTable(){
 		try {
-			//System.out.println("debug2");
 			String sql = "select C.year, C.class_no, C.course_id, C.name AS class_name, L.name AS lecturer_name, C.credit,C.class_id, C.person_max, C.room_id"
 						+" from class C, lecturer L, credits "
 						+"where credits.class_id = C.class_id and L.lecturer_id = C.lecturer_id and C.opened = 2014 and credits.student_id = ? and credits.grade is null";
@@ -42,43 +41,7 @@ private void setMyJoinTable(){
 				PreparedStatement psmt2 = DataManager.conn.prepareStatement(sql2);
 				psmt2.setInt(1, class_id);
 				ResultSet rs2 = psmt2.executeQuery();
-				String classTime; 
-				if(rs2.next()){
-					TimeUnit begin = DataManager.getTimeUnit(rs2.getString("begin"));
-					TimeUnit end = DataManager.getTimeUnit(rs2.getString("end"));
-					classTime = begin.toString() +"~" + end.toString();
-					if(begin.equals("NO")){
-						classTime = "NO";
-					}
-				} else{
-					classTime = null;
-				}
-				
-				String building_name = DataManager.getBuildingNameByRoomID(rs.getInt("room_id"));
-				String classLocation = building_name; //���ǽ�
-				
-				String beforeGrade = DataManager.getBeforeGrade(student.getStudent_id(), class_id);
-				if(beforeGrade == null){
-					beforeGrade = "N";
-				} else{
-					beforeGrade = "Y("+beforeGrade+")";
-				}
-				TableItem item = new TableItem(class_id,rs.getInt("year"),rs.getInt("class_no"),rs.getString("course_id"),rs.getString("class_name"),rs.getString("lecturer_name"),rs.getInt("credit"),classPerson,classTime,classLocation,beforeGrade,numOfCurPerson,rs.getInt("person_max"),beforeGrade);
-				myClassList.add(item);
-			}
-			if(backUpFlag == false){
-				backUpList.addAll(myClassList);
-				backUpFlag = true;
-			}
-			Platform.runLater(()->{
-				myJoinTable.setItems(FXCollections.observableArrayList(myClassList));
-				calculTimeList();
-			});
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+.. 생략			
 </code><pre>
 
 # Event Handling
@@ -98,18 +61,7 @@ private void handleBtnRecovery(ActionEvent e){
 				for(TableItem ele : backUpList){
 					DataManager.insertCreditByBackUP(student.getStudent_id(), ele.getClass_id(),ele.getRetry_credit());
 					myClassList.add(ele);
-				}
-				int curCredit = DataManager.getMyCredit(student.getStudent_id());
-				Platform.runLater(()->{
-					lblCurCredit.setText(curCredit + "����");
-					myJoinTable.setItems(FXCollections.observableArrayList(myClassList));
-					calculTimeList();
-				});
-			}
-			
-		};
-		Thread thread = new Thread(runnable);
-		thread.run();
 	}
+.. 생략..
 </code></pre>
 
