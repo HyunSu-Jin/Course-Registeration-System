@@ -42,7 +42,7 @@ private void setMyJoinTable(){
 				psmt2.setInt(1, class_id);
 				ResultSet rs2 = psmt2.executeQuery();
 .. 생략			
-</code><pre>
+</code></pre>
 
 # Event Handling
 JavaFX는 Button이 클릭되었을때(event)에 따른 function call기반으로 구성되어있다.
